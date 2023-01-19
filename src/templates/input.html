@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>input</title>
+    </head>
+<body>
+{% if form.errors %}
+<div class="errorlist">
+    {% for errors in form.errors.values %}
+        {% for error in errors %}
+            {{ error }}<br>
+        {% endfor %}
+    {% endfor %}
+</div>
+{% endif %}
+    <form action="/register/" method="post">
+        {% csrf_token %}
+        a<input type="text" name="a" value=""><br>
+        {% for i in ranges %}
+            d[{{ i }}]<input type="text" name="d[{{ i }}]" value=""><br>
+        {% endfor %}
+        <button type="submit">送信</button>
+    </form>
+</body>
+</html>
