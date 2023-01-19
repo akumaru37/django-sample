@@ -13,4 +13,7 @@ def register(request):
     if not form.is_valid():
         return render(request, template_name="input.html", context={'form': form, 'ranges': range(0, 7)})
 
+    for i in range(0, 7):
+        print(form.cleaned_data["d[" + str(i)+"]"])
+
     return redirect("/input/")
