@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles'
 ]
 
 MIDDLEWARE = [
@@ -77,8 +77,15 @@ WSGI_APPLICATION = 'src.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'usamaru',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': '192.168.0.20',
+        'PORT': '5432',
+        'TEST': {
+            'NAME': 'custom_test_database'
+        }
     }
 }
 
@@ -126,3 +133,6 @@ STATIC_DIR = os.path.join(BASE_DIR, "static")
 STATICFILES_DIRS = [
     STATIC_DIR
 ]
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'input'

@@ -17,9 +17,12 @@ from django.contrib import admin
 from django.urls import path
 
 from src.app import app_views
+from src.app.Login import Login, Logout
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('input/', app_views.input),
+    path('input/', app_views.input, name='input'),
     path('register/', app_views.register),
+    path('login/', Login.as_view(), name="login"),
+    path('logout/', Logout.as_view(), name="logout"),
 ]
