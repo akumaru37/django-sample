@@ -79,10 +79,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'usamaru',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': '192.168.0.20',
-        'PORT': '5432',
+        'USER': '${DB_USER}',
+        'PASSWORD': '${DB_PASS}',
+        'HOST': '${DB_HOST}',
+        'PORT': '${DB_PORT}',
         'TEST': {
             'NAME': 'custom_test_database'
         }
